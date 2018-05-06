@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  form(action="/api/search-results" method="POST")
+    label(for="location")
+    input(type="text" name="location" id="location")
+    button(type="submit")
+      p Search

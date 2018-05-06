@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title= `${title} | ${h.siteName}`
+    link(rel='stylesheet', href='/dist/style.css')
+    //- link(rel="shortcut icon" type="image/png" href="/images/icons/d.png")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet")
+
+  body
+    block header
+      header.top
+        .wrapper
+          nav.nav
+            .nav-section#logo
+              a.nav-section-logo(href="/")
+                h2 nyt
+            .nav-section#user
+              if user
+                a.nav-section-item(href=`/user/${user._id}`)
+                  img.avatar(src=user.gravatar + '&d=retro')
+                a.nav-section-item(href="/logout")
+                  span 👋 Logout
+              else
+                a.nav-section-item(href="/register") Register
+                a.nav-section-item(href="/login") Log In
+
+    block messages
+      if locals.flashes
+        .wrapper
+          .inner
+            .flash-messages
+              - const categories = Object.keys(locals.flashes)
+              each category in categories
+                each message in flashes[category]
+                  .flash(class=`flash-${category}`)
+                    p.flash-text!= message
+                    button.flash-remove(onClick="this.parentElement.remove()") &times;
+    
+    .content
+      .wrapper
+        block content
+
+    block scripts
+      script(src="/dist/App.bundle.js")
+      script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
