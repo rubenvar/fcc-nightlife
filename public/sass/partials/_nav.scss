@@ -4,25 +4,12 @@
   margin: 0;
   padding: 0;
   grid-template-columns: 1fr 1fr;
-  // justify-items: center;
   background: transparent;
   &-section {
     display: grid;
     grid-gap: 25px;
     grid-template-columns: auto auto;
     align-items: stretch;
-    &-item {
-      &:hover, &-active {
-        border-bottom: 3px solid $purple;
-        color: $purple;
-      }
-      &:hover {
-        padding-bottom: 2px;
-      }
-      &-active:hover {
-        padding-bottom: 5px;
-      }
-    }
   }
   #logo {
     justify-self: start;

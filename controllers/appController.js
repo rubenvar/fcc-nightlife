@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 
 exports.renderHome = (req, res) => {
@@ -25,5 +24,5 @@ exports.getSearchResults = (req, res, next) => {
 }
 
 exports.renderResults = (req, res) => {
-  res.render('results', { places: res.locals.apiResponse.businesses, total: res.locals.apiResponse.total });
+  res.render('results', { title: `Nightlife in ${req.body.location}`,places: res.locals.apiResponse.businesses, total: res.locals.apiResponse.total });
 }
