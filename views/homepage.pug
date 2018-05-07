@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  form(action="/api/search-results" method="POST")
+  form.search-location(action="/api/search-results" method="POST")
     label(for="location")
     input(type="text" name="location" id="location")
-    button(type="submit")
-      p Search
+    input(type="submit" value="Search")
+  ul.results

@@ -773,4 +773,33 @@ pre.error {
     .homepage .pro-box {
       width: 90%; } }
 
+.search-location.hidden {
+  display: none; }
+
+.results {
+  padding: 0;
+  margin: 0; }
+
+.place {
+  list-style: none;
+  border: 1px solid;
+  padding: 5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 10px;
+  margin: 0 0 15px; }
+  .place .text {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center; }
+    .place .text h3, .place .text p {
+      margin-top: 0; }
+    .place .text .tag {
+      background: #f00;
+      padding: 3px 7px 0;
+      border-radius: 5px;
+      line-height: 1; }
+
 /*# sourceMappingURL=style.css.map*/
