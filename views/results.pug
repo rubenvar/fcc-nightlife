@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  p Works!
+  ul.results
+    each place in places
+      li.place
+        img(src=`${place.image_url || '/images/pub.jpg'}` alt=`${place.name}`)
+        .text
+          h3
+            a(href=`${place.url}` target="_blank") #{place.name}
+          .details
+            p
+              each cat in place.categories
+                span.tag #{cat.title}
+                |  
+              | #{place.rating}, with #{place.review_count} ratings.
+        .user User options

@@ -5,7 +5,7 @@ exports.renderHome = (req, res) => {
   res.render('homepage');
 }
 
-exports.searchResults = (req, res) => {
+exports.getSearchResults = (req, res, next) => {
   // gets the searched word
   const location = req.body.location;
   const uri = 'https://api.yelp.com/v3/businesses/search?limit=10&categories=bars&location=' + location;
@@ -15,10 +15,15 @@ exports.searchResults = (req, res) => {
     .get(uri, { headers: { "Authorization": `Bearer ${token}` } })
     // and maybe axios them in a div below the homepage form and make the form dissapear
     .then(response => {
-      res.json(response.data);
+      res.locals.apiResponse = response.data;
+      next();
     })
     .catch(error => {
       console.log(error);
     });
   // and add a button 'new search' that hides the div and shows the form again
+}
+
+exports.renderResults = (req, res) => {
+  res.render('results', { places: res.locals.apiResponse.businesses, total: res.locals.apiResponse.total });
 }
