@@ -8,7 +8,7 @@ exports.renderHome = (req, res) => {
 exports.getSearchResults = (req, res, next) => {
   // gets the searched word
   const location = req.body.location;
-  const uri = 'https://api.yelp.com/v3/businesses/search?limit=10&categories=bars&location=' + location;
+  const uri = 'https://api.yelp.com/v3/businesses/search?limit=15&categories=bars&location=' + location;
   const token = process.env.YELP_KEY;
   axios
     // connects to api

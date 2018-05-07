@@ -437,10 +437,10 @@ template {
   font-style: normal; }
 
 html {
-  font-size: 22px; }
+  font-size: 18px; }
 
 body {
-  font-size: 22px;
+  font-size: 18px;
   font-family: 'Comfortaa', cursive;
   color: #303030; }
 
@@ -475,7 +475,7 @@ h2 a {
     color: #303030; }
 
 p {
-  font-size: 22px;
+  font-size: 18px;
   margin: 0 0 20px 0;
   line-height: 1.4; }
 
@@ -786,17 +786,17 @@ pre.error {
   -ms-grid-columns: 1fr 3fr 1fr;
       grid-template-columns: 1fr 3fr 1fr;
   grid-gap: 10px;
+  -ms-flex-align: center;
+      align-items: center;
   margin: 0 0 15px; }
-  .place .text {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center; }
-    .place .text h3, .place .text p {
-      margin-top: 0; }
-    .place .text .tag {
-      background: #f00;
-      padding: 3px 7px 0;
-      border-radius: 5px;
-      line-height: 1; }
+  .place .text h3 {
+    margin-top: 0; }
+  .place .text p {
+    margin-bottom: 0; }
+  .place .text .tag {
+    background: #f00;
+    padding: 3px 7px 0;
+    border-radius: 5px;
+    line-height: 1; }
 
 /*# sourceMappingURL=style.css.map*/

@@ -5,14 +5,14 @@ const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-// const passport = require('passport');
+const passport = require('passport');
 const promisify = require('es6-promisify');
 const flash = require('connect-flash');
 // const expressValidator = require('express-validator');
 const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
-// require('./handlers/passport'); // specify the strategy for passport
+require('./handlers/passport'); // specify the strategy for passport
 
 // create our Express app
 const app = express();
@@ -45,8 +45,8 @@ app.use(session({
 }));
 
 // // Passport JS is what we use to handle our logins
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // // The flash middleware let's us use req.flash('error', 'Shit!'), which will then pass that message to the next page the user requests
 app.use(flash());

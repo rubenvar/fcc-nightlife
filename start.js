@@ -12,7 +12,7 @@ mongoose.connection.on('error', (err) => {
 
 // import models
 // require('./models/Poll');
-// require('./models/User');
+require('./models/User');
 
 // Start!
 const app = require('./app');
