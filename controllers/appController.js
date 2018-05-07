@@ -14,6 +14,7 @@ exports.getSearchResults = (req, res, next) => {
     .get(uri, { headers: { "Authorization": `Bearer ${token}` } })
     // and maybe axios them in a div below the homepage form and make the form dissapear
     .then(response => {
+      console.log(response.data);
       res.locals.apiResponse = response.data;
       next();
     })
