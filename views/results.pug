@@ -14,8 +14,9 @@ block content
               each cat in place.categories
                 span.tag #{cat.title}
                 |  
-            p #{place.rating}, with #{place.review_count} ratings.
+            p #{place.rating}, with #{place.review_count} ratings – #{place.price}
         .user
           p Going tonight: 
             span 0
-          button I'm going!
+          form(action=`/going-tonight/${place.id}` method="POST")
+            button.going-tonight(type="submit") I'm going!

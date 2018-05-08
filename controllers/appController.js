@@ -1,4 +1,6 @@
 const axios = require('axios');
+// const mongoose = require('mongoose');
+// const User = mongoose.model('User'); //import here like this because it is already imported in start.js
 
 exports.renderHome = (req, res) => {
   res.render('homepage');
@@ -27,3 +29,10 @@ exports.getSearchResults = (req, res, next) => {
 exports.renderResults = (req, res) => {
   res.render('results', { title: `Nightlife in ${req.body.location}`,places: res.locals.apiResponse.businesses, total: res.locals.apiResponse.total });
 }
+
+// exports.storePlace = async (req, res) => {
+//   if (!req.user) {
+//     return next();
+//   }
+//   const user = await 
+// };

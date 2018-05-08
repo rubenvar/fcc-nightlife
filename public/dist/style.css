@@ -617,6 +617,13 @@ a.button {
     font-size: 50px;
     line-height: 1;
     text-transform: none; }
+  .nav .user-form {
+    display: none;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px; }
+  .nav .visible-form .user-form {
+    display: block; }
 
 .hide {
   text-indent: -999999px;

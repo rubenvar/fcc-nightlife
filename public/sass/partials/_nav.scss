@@ -29,6 +29,17 @@
     line-height: 1;
     text-transform: none;
   }
+  .user-form {
+    display: none;
+    background: $white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .visible-form {
+    .user-form {
+      display: block;
+    }
+  }
 }
 // @media all and (max-width: 650px) {
 //   .nav {

@@ -111,7 +111,38 @@ exports.$$ = $$;
 
 __webpack_require__(1);
 
+var _userForms = __webpack_require__(9);
+
+var _userForms2 = _interopRequireDefault(_userForms);
+
 var _bling = __webpack_require__(0);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var userOptions = (0, _bling.$$)('.user-form-access');
+userOptions.on('click', _userForms2.default);
+
+/***/ }),
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function showUserForm(e) {
+  e.preventDefault();
+  this.classList.add('visible-form');
+}
+exports.default = showUserForm;
 
 /***/ })
 /******/ ]);

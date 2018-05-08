@@ -9,4 +9,6 @@ router.get('/', appController.renderHome);
 
 router.post('/search-results', appController.getSearchResults, appController.renderResults);
 
+// router.post('/going-tonight/:id', catchErrors(appController.storePlace));
+
 module.exports = router;
