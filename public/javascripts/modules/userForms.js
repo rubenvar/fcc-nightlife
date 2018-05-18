@@ -1,5 +1,5 @@
 function showUserForm(e) {
   e.preventDefault();
-  this.classList.add('visible-form');
+  this.parentElement.classList.toggle('visible-form');
 }
 export default showUserForm

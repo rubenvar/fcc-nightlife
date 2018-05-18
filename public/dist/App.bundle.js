@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -98,38 +98,6 @@ exports.$$ = $$;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(1);
-
-var _userForms = __webpack_require__(9);
-
-var _userForms2 = _interopRequireDefault(_userForms);
-
-var _bling = __webpack_require__(0);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var userOptions = (0, _bling.$$)('.user-form-access');
-userOptions.on('click', _userForms2.default);
-
-/***/ }),
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,9 +108,40 @@ Object.defineProperty(exports, "__esModule", {
 });
 function showUserForm(e) {
   e.preventDefault();
-  this.classList.add('visible-form');
+  this.parentElement.classList.toggle('visible-form');
 }
 exports.default = showUserForm;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(2);
+
+var _userForms = __webpack_require__(1);
+
+var _userForms2 = _interopRequireDefault(_userForms);
+
+var _bling = __webpack_require__(0);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var userOptions = (0, _bling.$$)('.user-form-access');
+// import ajaxLogin from './modules/login';
+
+userOptions.on('click', _userForms2.default);
+
+var loginButton = (0, _bling.$)('.login-button');
+// loginButton.on('click', ajaxLogin)
 
 /***/ })
 /******/ ]);

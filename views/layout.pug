@@ -8,7 +8,7 @@ html
     link(rel='stylesheet', href='/dist/style.css')
     //- link(rel="shortcut icon" type="image/png" href="/images/icons/d.png")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    link(href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet")
+    //- link(href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet")
 
   body
     block header
@@ -25,10 +25,12 @@ html
                 a.nav-section-item(href="/logout")
                   span 👋 Logout
               else
-                a.nav-section-item.user-form-access(href="/#") Register
+                .nav-section-item
+                  a.user-form-access(href="/#") Register
                   .user-form.register
                     +registerForm()
-                a.nav-section-item.user-form-access(href="/#") Log In
+                .nav-section-item
+                  a.user-form-access(href="/#") Log In
                   .user-form.login
                     +loginForm()
 

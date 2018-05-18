@@ -30,9 +30,10 @@ exports.renderResults = (req, res) => {
   res.render('results', { title: `Nightlife in ${req.body.location}`,places: res.locals.apiResponse.businesses, total: res.locals.apiResponse.total });
 }
 
-// exports.storePlace = async (req, res) => {
-//   if (!req.user) {
-//     return next();
-//   }
-//   const user = await 
-// };
+exports.storePlace = (req, res) => {
+  if (!req.user) {
+    console.log('not logged user');
+    return;
+  }
+  res.json(req.params);
+};

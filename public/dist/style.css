@@ -601,11 +601,13 @@ a.button {
         grid-template-columns: auto auto;
     -ms-flex-align: stretch;
         align-items: stretch; }
+    .nav-section-item.visible-form .user-form {
+      display: block; }
   .nav #logo {
     justify-self: start; }
   .nav #user {
     justify-self: end; }
-  .nav a {
+  .nav a, .nav p {
     display: -ms-grid;
     display: grid;
     -ms-flex-align: center;
@@ -622,8 +624,6 @@ a.button {
     background: #fff;
     padding: 10px;
     border-radius: 10px; }
-  .nav .visible-form .user-form {
-    display: block; }
 
 .hide {
   text-indent: -999999px;
