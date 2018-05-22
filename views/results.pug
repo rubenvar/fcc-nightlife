@@ -9,6 +9,7 @@ block content
         .text
           h3
             a(href=`${place.url}` target="_blank") #{place.name}
+          p #{place.id}
           .details
             p
               each cat in place.categories
@@ -18,5 +19,7 @@ block content
         .user
           p Going tonight: 
             span 0
-          form(action=`/going-tonight/${place.id}` method="POST")
-            button.going-tonight(type="submit") I'm going!
+          form.going-tonight(method="POST" action=`/going-tonight/${place.id}`)
+            input(name="culo" type="text" value=17 readonly)
+            button(type="submit" name="going") I'm going!
+  pre= h.dump(user)
