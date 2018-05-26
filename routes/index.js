@@ -7,7 +7,10 @@ const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', appController.renderHome);
 
-router.post('/search-results', appController.getSearchResults, appController.renderResults);
+router.get('/search-results',
+  appController.getSearchResults,
+  // catchErrors(appController.countAssistance),
+  appController.renderResults);
 
 router.post('/register',
   userController.validateRegister,

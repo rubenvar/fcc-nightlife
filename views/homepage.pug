@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  form.search-location(action="/search-results" method="POST")
+  form.search-location(action="/search-results" method="GET")
     label(for="location")
     input(type="text" name="location" id="location")
     input(type="submit" value="Search")

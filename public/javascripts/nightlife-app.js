@@ -1,7 +1,7 @@
 import '../sass/style.scss';
 import { $, $$ } from './modules/bling';
 import { showUserForm, closeForm } from './modules/userForms';
-// import ajaxLogin from './modules/login';
+import ajaxLogin from './modules/login';
 import registerAssistance from './modules/going';
 
 const userOptions = $$('.user-form-access');

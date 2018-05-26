@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 function ajaxLogin(e) {
-  // e.preventDefault();
+  e.preventDefault();
   console.log(this);
   axios
-    .post(this.action)
+    .post(this.form.action)
     .then(res => {
       console.log(res);
     })

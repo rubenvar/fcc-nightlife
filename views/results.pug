@@ -17,8 +17,9 @@ block content
                 |  
             p #{place.rating}, with #{place.review_count} ratings – #{place.price}
         .user
-          form.going-form(method="POST" action=`/going-tonight/${place.id}`)
+          form.going-form(method="POST" class=`${user && user.places.includes(place.id) ? 'going-confirmed' : ''}` action=`/going-tonight/${place.id}`)
             button(type="submit" name="going") I'm going!
               p Total going: 
                 span.number 0
   pre= h.dump(user)
+  pre= h.dump(thePlace)

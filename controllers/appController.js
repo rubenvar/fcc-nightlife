@@ -8,13 +8,12 @@ exports.renderHome = (req, res) => {
 
 exports.getSearchResults = (req, res, next) => {
   // gets the searched word
-  const location = req.body.location;
-  const uri = 'https://api.yelp.com/v3/businesses/search?limit=2&categories=bars&location=' + location;
+  const location = req.query.location; // maybe try to get it first from the locals?
+  const uri = 'https://api.yelp.com/v3/businesses/search?limit=10&categories=bars&location=' + location;
   const token = process.env.YELP_KEY;
   axios
     // connects to api
     .get(uri, { headers: { "Authorization": `Bearer ${token}` } })
-    // and maybe axios them in a div below the homepage form and make the form dissapear
     .then(response => {
       console.log(response.data);
       res.locals.apiResponse = response.data;
@@ -22,12 +21,22 @@ exports.getSearchResults = (req, res, next) => {
     })
     .catch(error => {
       console.log(error);
+      req.flash('error', 'An error occurred...');
+      res.redirect('/');
     });
-  // and add a button 'new search' that hides the div and shows the form again
+}
+
+exports.countAssistance = (req, res, next) => {
+  console.log('casa');
+  next();
 }
 
 exports.renderResults = (req, res) => {
-  res.render('results', { title: `Nightlife in ${req.body.location}`,places: res.locals.apiResponse.businesses, total: res.locals.apiResponse.total });
+  res.render('results', {
+    title: `Nightlife in ${req.query.location}`,
+    places: res.locals.apiResponse.businesses,
+    total: res.locals.apiResponse.total
+  });
 }
 
 exports.storePlace = async (req, res) => {

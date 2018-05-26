@@ -30,39 +30,3 @@
     text-transform: none;
   }
 }
-// @media all and (max-width: 650px) {
-//   .nav {
-//     grid-template-columns: 1fr 1fr;
-//     #logo {
-//       display: none;
-//     }
-//     #mobile-logo {
-//       display: block;
-//       grid-column: span 2;
-//     }
-//   }
-// }
-// @media all and (max-width: 550px) {
-//   .nav {
-//     align-items: center;
-//     a {
-//       text-align: center;
-//     }
-//     .avatar {
-//       margin: 0 auto;
-//     }
-//     #menu, #user {
-//       justify-self: center;
-//     }
-//     .nav-section-item {
-//       margin-bottom: 10px;
-//       &:hover, &-active {
-//         border: none;
-//         padding-bottom: 5px;
-//       }
-//     }
-//     &-section {
-//       grid-template-columns: 1fr;
-//     }
-//   }
-// }
