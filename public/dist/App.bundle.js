@@ -958,19 +958,24 @@ var _axios = __webpack_require__(12);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _bling = __webpack_require__(8);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import { $, $$ } from './bling';
 
 function registerAssistance(e) {
   var _this = this;
 
   e.preventDefault();
   console.log(this);
+  var number = this.button.querySelector('.number');
+  console.log(number);
   _axios2.default.post(this.action).then(function (resp) {
-    console.log('yay!');
     console.log(resp.data);
-    console.log(_this.culo);
+    _this.classList.toggle('going-confirmed');
+    console.log(_this);
+    if (_this.classList.contains('going-confirmed')) {
+      console.log('la tiene');
+    }
   }).catch(console.error);
 }
 
@@ -986,11 +991,34 @@ exports.default = registerAssistance;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.closeForm = exports.showUserForm = undefined;
+
+var _bling = __webpack_require__(8);
+
+var container = (0, _bling.$)('.user-forms');
+var loginForm = (0, _bling.$)('.login-form');
+var registerForm = (0, _bling.$)('.register-form');
+
 function showUserForm(e) {
   e.preventDefault();
-  this.parentElement.classList.toggle('visible-form');
+  container.classList.add('visib');
+
+  if (this.classList.contains('login')) {
+    loginForm.classList.add('visib');
+  } else if (this.classList.contains('register')) {
+    registerForm.classList.add('visib');
+  }
+  // this.parentElement.classList.toggle('visible-form');
 }
-exports.default = showUserForm;
+
+function closeForm(e) {
+  container.classList.remove('visib');
+  loginForm.classList.remove('visib');
+  registerForm.classList.remove('visib');
+}
+
+exports.showUserForm = showUserForm;
+exports.closeForm = closeForm;
 
 /***/ }),
 /* 11 */
@@ -1808,8 +1836,6 @@ var _bling = __webpack_require__(8);
 
 var _userForms = __webpack_require__(10);
 
-var _userForms2 = _interopRequireDefault(_userForms);
-
 var _going = __webpack_require__(9);
 
 var _going2 = _interopRequireDefault(_going);
@@ -1819,12 +1845,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var userOptions = (0, _bling.$$)('.user-form-access');
 // import ajaxLogin from './modules/login';
 
-userOptions.on('click', _userForms2.default);
+userOptions.on('click', _userForms.showUserForm);
+
+var closeButton = (0, _bling.$$)('.close-form');
+closeButton.on('click', _userForms.closeForm);
+
+var userFormContainer = (0, _bling.$)('.user-forms');
+// userFormContainer.on('click', closeForm);
+
+document.on('keydown', function (e) {
+  if (userFormContainer.classList.contains('visib') && e.keyCode === 27) (0, _userForms.closeForm)();
+});
 
 var loginButton = (0, _bling.$)('.login-button');
-// loginButton.on('click', ajaxLogin)
+// loginButton.on('click', ajaxLogin);
 
-var goingForms = (0, _bling.$$)('.going-tonight');
+var goingForms = (0, _bling.$$)('.going-form');
 goingForms.on('click', _going2.default);
 
 /***/ })

@@ -11,18 +11,14 @@ router.post('/search-results', appController.getSearchResults, appController.ren
 
 router.post('/register',
   userController.validateRegister,
-  catchErrors(userController.createUser)
+  catchErrors(userController.createUser),
+  userController.login
 );
 
 router.post('/login', userController.login);
 
+router.get('/logout', userController.logout);
+
 router.post('/going-tonight/:id', catchErrors(appController.storePlace));
 
 module.exports = router;
-
-
-// router.post('/register',
-//     userController.validateRegister,
-//     userController.register,
-//     authController.login
-// );

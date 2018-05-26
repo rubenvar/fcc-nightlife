@@ -17,6 +17,7 @@ body {
 .wrapper {
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
   @media all and (max-width: 920px) {
     margin: 0 30px;
   }

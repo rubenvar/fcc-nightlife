@@ -1,15 +1,20 @@
 import axios from 'axios';
-import { $, $$ } from './bling';
+// import { $, $$ } from './bling';
 
 function registerAssistance(e) {
   e.preventDefault();
   console.log(this);
+  const number = this.button.querySelector('.number');
+  console.log(number);
   axios
     .post(this.action)
     .then(resp => {
-      console.log('yay!');
       console.log(resp.data);
-      console.log(this.culo)
+      this.classList.toggle('going-confirmed');
+      console.log(this);
+      if (this.classList.contains('going-confirmed')) {
+        console.log('la tiene');
+      }
     })
     .catch(console.error);
 }

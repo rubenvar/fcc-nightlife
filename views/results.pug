@@ -17,9 +17,8 @@ block content
                 |  
             p #{place.rating}, with #{place.review_count} ratings – #{place.price}
         .user
-          p Going tonight: 
-            span 0
-          form.going-tonight(method="POST" action=`/going-tonight/${place.id}`)
-            input(name="culo" type="text" value=17 readonly)
+          form.going-form(method="POST" action=`/going-tonight/${place.id}`)
             button(type="submit" name="going") I'm going!
+              p Total going: 
+                span.number 0
   pre= h.dump(user)

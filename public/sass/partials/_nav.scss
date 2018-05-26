@@ -10,11 +10,6 @@
     grid-gap: 25px;
     grid-template-columns: auto auto;
     align-items: stretch;
-    &-item.visible-form {
-      .user-form {
-        display: block;
-      }
-    }
   }
   #logo {
     justify-self: start;
@@ -33,12 +28,6 @@
     font-size: 50px;
     line-height: 1;
     text-transform: none;
-  }
-  .user-form {
-    display: none;
-    background: $white;
-    padding: 10px;
-    border-radius: 10px;
   }
 }
 // @media all and (max-width: 650px) {

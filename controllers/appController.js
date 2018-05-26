@@ -36,9 +36,11 @@ exports.storePlace = async (req, res) => {
     console.log('not logged user');
     return;
   }
+  const places = req.user.places.map(place => place.toString());
+  const op = places.includes(req.params.id) ? '$pull' : '$push';
   const user = await User.findOneAndUpdate(
     { _id: req.user._id },
-    { $push: { places: req.params.id } },
+    { [op]: { places: req.params.id } },
     { new: true }
   );
   res.json(user);
