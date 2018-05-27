@@ -3,8 +3,11 @@ html {
 }
 
 body {
-  background: $black;
+  background-color: $black;
+  background-image: url("/images/bg.png");
+  background-repeat: repeat;
   min-height: 100vh;
+  position: relative;
 }
 
 .content {

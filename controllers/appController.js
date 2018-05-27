@@ -9,7 +9,7 @@ exports.renderHome = (req, res) => {
 exports.getSearchResults = (req, res, next) => {
   // gets the searched word
   const location = req.query.location;
-  const uri = 'https://api.yelp.com/v3/businesses/search?limit=10&categories=bars&location=' + location;
+  const uri = 'https://api.yelp.com/v3/businesses/search?limit=15&categories=bars&location=' + location;
   const token = process.env.YELP_KEY;
   axios
     // connects to api
@@ -23,8 +23,6 @@ exports.getSearchResults = (req, res, next) => {
       req.flash('error', 'An error occurred...');
       res.redirect('/');
     });
-  // res.locals.apiResponse = allTheData;
-  // next();
 }
 
 exports.countAssistance = async (req, res, next) => {
@@ -40,7 +38,7 @@ exports.countAssistance = async (req, res, next) => {
 
 exports.renderResults = (req, res) => {
   res.render('results', {
-    title: `${req.query.location}`,
+    title: req.query.location,
     places: res.locals.apiResponse.businesses,
     total: res.locals.apiResponse.total
   });
@@ -62,3 +60,30 @@ exports.storePlace = async (req, res) => {
   );
   res.json(user);
 };
+
+// exports.getUserById = async (req, res, next) => {
+//   res.locals.theUser = await User.findOne({ _id: req.params.userid });
+//   next();
+// };
+
+// exports.renderUser = async (req, res) => {
+//   res.locals.confirmedPlaces = [];
+
+//   await Promise.all(res.locals.theUser.places.map(async placeId => {
+//     const uri = 'https://api.yelp.com/v3/businesses/' + placeId;
+//     const token = process.env.YELP_KEY;
+//     await axios
+//       .get(uri, { headers: { "Authorization": `Bearer ${token}` } })
+//       .then(response => {
+//         placeData = response.data;
+//         res.locals.confirmedPlaces.push(placeData);
+//       })
+//       .catch(error => {
+//         console.log(error);
+//         req.flash('error', 'An error occurred...');
+//         res.redirect('/');
+//       });
+//   }));
+
+//   res.render('user', { title: `${res.locals.theUser.name}'s user page`, places: res.locals.confirmedPlaces });
+// };

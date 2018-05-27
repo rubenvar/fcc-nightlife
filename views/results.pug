@@ -11,13 +11,13 @@ block content
         .text
           h3
             a(href=`${place.url}` target="_blank") #{place.name}
-          p #{place.id}
           .details
             p
               each cat in place.categories
                 span.tag #{cat.title}
                 |  
             p #{place.rating}, with #{place.review_count} ratings – #{place.price}
+            p #{place.location.display_address}
         .user
           form.going-form(method="POST" class=`${user && user.places.includes(place.id) ? 'going-confirmed' : ''} ${user ? 'logged-user' : 'no-user' }` action=`/going-tonight/${place.id}`)
             button(type="submit" name="going")
@@ -25,4 +25,4 @@ block content
               p.notgoing-text I'm not going
               p Total going: 
                 span.number #{place.users_going}
-  pre= h.dump(user)
+  a(href="/") Search again

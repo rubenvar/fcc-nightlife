@@ -2,8 +2,11 @@ html {
   font-size: 18px; }
 
 body {
-  background: #2a2a21;
-  min-height: 100vh; }
+  background-color: #2a2a21;
+  background-image: url("/images/bg.png");
+  background-repeat: repeat;
+  min-height: 100vh;
+  position: relative; }
 
 .content {
   padding: 40px 0; }
@@ -433,7 +436,7 @@ template {
   display: none; }
 
 @font-face {
-  font-family: sans-serif;
+  font-family: 'Prosto One', cursive;
   font-weight: normal;
   font-style: normal; }
 
@@ -442,12 +445,12 @@ html {
 
 body {
   font-size: 18px;
-  font-family: sans-serif;
+  font-family: 'Prosto One', cursive;
   color: #fff641; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 30px;
-  font-family: sans-serif;
+  font-family: 'Prosto One', cursive;
   font-weight: 700;
   margin-bottom: 15px; }
 
@@ -480,8 +483,11 @@ p {
   line-height: 1.4; }
 
 nav {
-  font-family: sans-serif;
+  font-family: 'Prosto One', cursive;
   font-size: 16px; }
+
+button, input, optgroup, select, textarea {
+  font-family: 'Prosto One', cursive; }
 
 input, textarea {
   width: 100%;
@@ -498,9 +504,6 @@ label {
   margin-bottom: 5px;
   display: block;
   font-weight: 700; }
-
-button, input, optgroup, select, textarea {
-  font-family: sans-serif; }
 
 button,
 .button,
@@ -594,11 +597,11 @@ a.button {
       grid-template-columns: 1fr;
   -ms-grid-column-align: center;
       justify-items: center;
-  -ms-flex-align: center;
-      align-items: center;
+  -ms-flex-align: start;
+      align-items: start;
   background-color: rgba(0, 0, 0, 0.8);
   top: 0;
-  min-height: 100vh; }
+  min-height: 100%; }
   .user-forms.visib {
     display: -ms-grid;
     display: grid; }
@@ -608,6 +611,7 @@ a.button {
     color: #2a2a21;
     padding: 10px;
     border-radius: 10px;
+    margin: 100px 0 0;
     width: 450px; }
     .user-forms .user-form .user-form-top {
       display: table;
@@ -697,7 +701,8 @@ h1 .place-title {
   grid-gap: 10px;
   -ms-flex-align: center;
       align-items: center;
-  margin: 0 0 15px; }
+  margin: 0 0 25px;
+  background: #2a2a21; }
   .place .text h3 {
     margin-top: 0; }
   .place .text p {

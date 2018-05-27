@@ -9,7 +9,10 @@ router.get('/', appController.renderHome);
 router.get('/search-results',
   appController.getSearchResults,
   catchErrors(appController.countAssistance),
-  appController.renderResults);
+  appController.renderResults
+);
+
+router.get('/user/:userid', catchErrors(appController.getUserById), catchErrors(appController.renderUser));
 
 router.post('/register',
   userController.validateRegister,
