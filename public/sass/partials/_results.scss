@@ -1,3 +1,9 @@
+h1 {
+  .place-title {
+    text-transform: capitalize;
+    color: $white;
+  }
+}
 .results {
   padding: 0;
   margin: 0;
@@ -28,7 +34,16 @@
   }
   .user {
     form.going-form {
+      p.notgoing-text {
+        display: none;
+      }
       &.going-confirmed {
+        p.notgoing-text {
+          display: block;
+        }
+        p.going-text {
+          display: none;
+        }
         button {
           background-color: #f00;
         }

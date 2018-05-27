@@ -13,7 +13,6 @@ function showUserForm(e) {
   } else if (this.classList.contains('register')) {
     registerForm.classList.add('visib');
   }
-  // this.parentElement.classList.toggle('visible-form');
 }
 
 function closeForm(e) {

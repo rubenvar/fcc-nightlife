@@ -1,7 +1,9 @@
 extends layout
 
 block content
-  h1= title
+  h1 Nightlife in 
+    span.place-title #{title}
+    | :
   ul.results
     each place in places
       li.place(data-id=`${place.id}`)
@@ -17,9 +19,10 @@ block content
                 |  
             p #{place.rating}, with #{place.review_count} ratings – #{place.price}
         .user
-          form.going-form(method="POST" class=`${user && user.places.includes(place.id) ? 'going-confirmed' : ''}` action=`/going-tonight/${place.id}`)
-            button(type="submit" name="going") I'm going!
+          form.going-form(method="POST" class=`${user && user.places.includes(place.id) ? 'going-confirmed' : ''} ${user ? 'logged-user' : 'no-user' }` action=`/going-tonight/${place.id}`)
+            button(type="submit" name="going")
+              p.going-text I'm going!
+              p.notgoing-text I'm not going
               p Total going: 
-                span.number 0
+                span.number #{place.users_going}
   pre= h.dump(user)
-  pre= h.dump(thePlace)

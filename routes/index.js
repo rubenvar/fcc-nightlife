@@ -2,14 +2,13 @@ const express = require('express');
 const router = express.Router();
 const appController = require('../controllers/appController');
 const userController = require('../controllers/userController');
-// const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', appController.renderHome);
 
 router.get('/search-results',
   appController.getSearchResults,
-  // catchErrors(appController.countAssistance),
+  catchErrors(appController.countAssistance),
   appController.renderResults);
 
 router.post('/register',

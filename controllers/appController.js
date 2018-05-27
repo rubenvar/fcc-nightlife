@@ -8,14 +8,13 @@ exports.renderHome = (req, res) => {
 
 exports.getSearchResults = (req, res, next) => {
   // gets the searched word
-  const location = req.query.location; // maybe try to get it first from the locals?
+  const location = req.query.location;
   const uri = 'https://api.yelp.com/v3/businesses/search?limit=10&categories=bars&location=' + location;
   const token = process.env.YELP_KEY;
   axios
     // connects to api
     .get(uri, { headers: { "Authorization": `Bearer ${token}` } })
     .then(response => {
-      console.log(response.data);
       res.locals.apiResponse = response.data;
       next();
     })
@@ -24,32 +23,41 @@ exports.getSearchResults = (req, res, next) => {
       req.flash('error', 'An error occurred...');
       res.redirect('/');
     });
+  // res.locals.apiResponse = allTheData;
+  // next();
 }
 
-exports.countAssistance = (req, res, next) => {
-  console.log('casa');
+exports.countAssistance = async (req, res, next) => {
+  // map through the array of objects (places) and count the users that have the place id in their db document
+  await Promise.all(res.locals.apiResponse.businesses.map(async place => {
+    const id = place.id;
+    const count = await User.count({ places: id });
+    place["users_going"] = count;
+  }));
+  // when all of the return, keep going (Promise.all)
   next();
 }
 
 exports.renderResults = (req, res) => {
   res.render('results', {
-    title: `Nightlife in ${req.query.location}`,
+    title: `${req.query.location}`,
     places: res.locals.apiResponse.businesses,
     total: res.locals.apiResponse.total
   });
 }
 
 exports.storePlace = async (req, res) => {
-  console.log('storing place id: ' + req.params.id + ' in the user with id: ' + req.user._id);
+  // if no user, the client side js already shows login form, but just in case
   if (!req.user) {
     console.log('not logged user');
     return;
   }
+  // get the user's places and string them
   const places = req.user.places.map(place => place.toString());
-  const op = places.includes(req.params.id) ? '$pull' : '$push';
+  const operator = places.includes(req.params.id) ? '$pull' : '$push';
   const user = await User.findOneAndUpdate(
     { _id: req.user._id },
-    { [op]: { places: req.params.id } },
+    { [operator]: { places: req.params.id } },
     { new: true }
   );
   res.json(user);
