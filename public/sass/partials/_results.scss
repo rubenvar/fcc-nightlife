@@ -20,6 +20,9 @@ h1 {
   align-items: center;
   margin: 0;
   background: rgba(45,45,35,0.7);
+  @media all and (max-width: 750px) {
+    grid-template-columns: 1fr 3fr
+  }
   &:nth-child(even) {
     background-color: rgba(60,60,50,0.7);
   }
@@ -48,10 +51,20 @@ h1 {
     }
   }
   .user {
+    @media all and (max-width: 750px) {
+      grid-column: span 2;
+    }
     form.going-form {
+      button {
+        margin: 0;
+        width: 100%;
+      }
       p.notgoing-text, p.going-text {
         font-weight: 700;
         text-transform: uppercase;
+      }
+      p.going-text {
+          display: inline-block;
       }
       p.notgoing-text {
         display: none;
@@ -59,10 +72,14 @@ h1 {
       p.going-total {
         color: #4a4a4c;
         margin-top: 5px;
+        @media all and (max-width: 750px) {
+          display: inline-block;
+          margin-left: 15px;
+        }
       }
       &.going-confirmed {
         p.notgoing-text {
-          display: block;
+          display: inline-block;
         }
         p.going-text {
           display: none;
@@ -81,4 +98,5 @@ h1 {
 .search-again {
   margin-top: 40px;
   background-color: $white;
+  text-transform: uppercase;
 }

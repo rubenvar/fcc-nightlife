@@ -7,15 +7,22 @@
   background: transparent;
   &-section {
     display: grid;
-    grid-gap: 25px;
     grid-template-columns: auto auto;
     align-items: stretch;
   }
   #logo {
     justify-self: start;
+    @media all and (max-width: 550px) {
+      justify-self: center;
+    }
   }
   #user {
     justify-self: end;
+    grid-gap: 25px;
+    @media all and (max-width: 550px) {
+      justify-self: center;
+      margin-top: 10px;
+    }
   }
   a, p {
     display: grid;
@@ -30,5 +37,8 @@
     font-size: 50px;
     line-height: 1;
     text-transform: none;
+  }
+  @media all and (max-width: 550px) {
+    grid-template-columns: 1fr;
   }
 }

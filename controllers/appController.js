@@ -20,7 +20,7 @@ exports.getSearchResults = (req, res, next) => {
     })
     .catch(error => {
       console.log(error);
-      req.flash('error', 'An error occurred...');
+      req.flash('error', '❌ An error occurred...');
       res.redirect('/');
     });
 }

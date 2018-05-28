@@ -4,6 +4,7 @@ import { $, $$ } from './bling';
 function registerAssistance(e) {
   e.preventDefault();
   if (this.classList.contains('no-user')) {
+    // if no logged, show login form and scroll to top
     $('.user-forms').classList.add('visib');
     $('.login-form').classList.add('visib');
     return;

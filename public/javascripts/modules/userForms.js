@@ -10,8 +10,10 @@ function showUserForm(e) {
 
   if (this.classList.contains('login')) {
     loginForm.classList.add('visib');
+    registerForm.classList.remove('visib');
   } else if (this.classList.contains('register')) {
     registerForm.classList.add('visib');
+    loginForm.classList.remove('visib');
   }
 }
 
