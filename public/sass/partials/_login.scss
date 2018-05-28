@@ -3,7 +3,6 @@
   width: 100%;
   z-index: 100;
   display: none;
-  // display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: start;
@@ -15,8 +14,8 @@
   }
   .user-form {
     display: none;
-    background: $white;
-    color: $black;
+    background: rgba(60,60,50,0.9);
+    color: $white;
     padding: 10px;
     border-radius: 10px;
     margin: 100px 0 0;

@@ -11,7 +11,7 @@ html {
 body {
   font-size: 18px;
   font-family: 'Prosto One', cursive;
-  color: $yellow;
+  color: $white;
 }
 
 h1, h2, h3, h4, h5, h6, {
@@ -39,13 +39,16 @@ h3 {
 a {
   text-decoration: none;
   color: $yellow;
+  &:hover {
+    color: $white;
+  }
 }
 
 p a,
 h2 a {
-  color: $yellow;
+  color: $white;
   &:hover {
-    color: $white;
+    color: $yellow;
   }
 }
 

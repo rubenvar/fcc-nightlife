@@ -16,13 +16,13 @@ block content
               each cat in place.categories
                 span.tag #{cat.title}
                 |  
-            p #{place.rating}, with #{place.review_count} ratings – #{place.price}
+            p #{place.rating} (#{place.review_count} ratings) #{place.price ? '– ' + place.price : ''}
             p #{place.location.display_address}
         .user
           form.going-form(method="POST" class=`${user && user.places.includes(place.id) ? 'going-confirmed' : ''} ${user ? 'logged-user' : 'no-user' }` action=`/going-tonight/${place.id}`)
             button(type="submit" name="going")
-              p.going-text I'm going!
-              p.notgoing-text I'm not going
-              p Total going: 
+              p.going-text Join tonight!
+              p.notgoing-text You are going!
+              p.going-total Total: 
                 span.number #{place.users_going}
-  a(href="/") Search again
+  a.button.search-again(href="/") Search again

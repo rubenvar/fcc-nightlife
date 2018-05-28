@@ -60,30 +60,3 @@ exports.storePlace = async (req, res) => {
   );
   res.json(user);
 };
-
-// exports.getUserById = async (req, res, next) => {
-//   res.locals.theUser = await User.findOne({ _id: req.params.userid });
-//   next();
-// };
-
-// exports.renderUser = async (req, res) => {
-//   res.locals.confirmedPlaces = [];
-
-//   await Promise.all(res.locals.theUser.places.map(async placeId => {
-//     const uri = 'https://api.yelp.com/v3/businesses/' + placeId;
-//     const token = process.env.YELP_KEY;
-//     await axios
-//       .get(uri, { headers: { "Authorization": `Bearer ${token}` } })
-//       .then(response => {
-//         placeData = response.data;
-//         res.locals.confirmedPlaces.push(placeData);
-//       })
-//       .catch(error => {
-//         console.log(error);
-//         req.flash('error', 'An error occurred...');
-//         res.redirect('/');
-//       });
-//   }));
-
-//   res.render('user', { title: `${res.locals.theUser.name}'s user page`, places: res.locals.confirmedPlaces });
-// };

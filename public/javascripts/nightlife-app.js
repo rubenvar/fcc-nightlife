@@ -27,3 +27,11 @@ const loginButton = $('.login-button');
 // register assistance and update count and button class
 const goingForms = $$('.going-form');
 goingForms.on('click', registerAssistance);
+
+// const placeResults = $$('.place');
+// placeResults.on('mouseover', function() {
+//   this.classList.add('inter');
+// });
+// placeResults.on('mouseout', function() {
+//   this.classList.remove('inter');
+// })

@@ -446,7 +446,7 @@ html {
 body {
   font-size: 18px;
   font-family: 'Prosto One', cursive;
-  color: #fff641; }
+  color: #e7e7e7; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 30px;
@@ -469,13 +469,15 @@ h3 {
 a {
   text-decoration: none;
   color: #fff641; }
+  a:hover {
+    color: #e7e7e7; }
 
 p a,
 h2 a {
-  color: #fff641; }
+  color: #e7e7e7; }
   p a:hover,
   h2 a:hover {
-    color: #fff; }
+    color: #fff641; }
 
 p {
   font-size: 18px;
@@ -497,7 +499,7 @@ input, textarea {
   background: #2a2a21;
   color: #fff641; }
   input:focus, input:active, textarea:focus, textarea:active {
-    border-color: #fff; }
+    border-color: #e7e7e7; }
 
 label {
   padding: 0;
@@ -513,7 +515,7 @@ input[type="submit"] {
   line-height: 1.3;
   box-shadow: none;
   border: none;
-  background-color: #fff;
+  background-color: #fff641;
   color: #2a2a21;
   cursor: pointer; }
   button p,
@@ -563,10 +565,10 @@ a.button {
   .flash button {
     padding: 0;
     color: #827cd2;
-    background-color: #fff;
+    background-color: #e7e7e7;
     margin: 0; }
     .flash button:hover {
-      background-color: #fff;
+      background-color: #e7e7e7;
       color: #2a2a21; }
   .flash:after {
     content: '';
@@ -607,8 +609,8 @@ a.button {
     display: grid; }
   .user-forms .user-form {
     display: none;
-    background: #fff;
-    color: #2a2a21;
+    background: rgba(60, 60, 50, 0.9);
+    color: #e7e7e7;
     padding: 10px;
     border-radius: 10px;
     margin: 100px 0 0;
@@ -657,7 +659,9 @@ a.button {
     display: grid;
     -ms-flex-align: center;
         align-items: center;
-    padding: 5px 0; }
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 0; }
   .nav h2 {
     padding: 0;
     margin: 0;
@@ -682,9 +686,11 @@ pre.error {
   line-height: 3;
   white-space: pre-line; }
 
-h1 .place-title {
-  text-transform: capitalize;
-  color: #fff; }
+h1 {
+  color: #ccc; }
+  h1 .place-title {
+    text-transform: capitalize;
+    color: #e7e7e7; }
 
 .results {
   padding: 0;
@@ -692,33 +698,58 @@ h1 .place-title {
 
 .place {
   list-style: none;
-  border: 1px solid #fff641;
-  padding: 5px;
+  border: none;
+  padding: 20px 10px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 3fr 1fr;
       grid-template-columns: 1fr 3fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 15px;
   -ms-flex-align: center;
       align-items: center;
-  margin: 0 0 25px;
-  background: #2a2a21; }
+  margin: 0;
+  background: rgba(45, 45, 35, 0.7); }
+  .place:nth-child(even) {
+    background-color: rgba(60, 60, 50, 0.7); }
   .place .text h3 {
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 10px; }
+    .place .text h3 a {
+      color: #e7e7e7;
+      font-size: 36px; }
+      .place .text h3 a:hover {
+        color: #fff641; }
   .place .text p {
-    margin-bottom: 0; }
+    color: #ccc;
+    margin-bottom: 5px;
+    font-size: 14px; }
   .place .text .tag {
-    background: #f00;
-    padding: 3px 7px 0;
-    border-radius: 5px;
+    background: #ccc;
+    color: #2a2a21;
+    padding: 1px 5px 0;
     line-height: 1; }
+  .place .user form.going-form p.notgoing-text, .place .user form.going-form p.going-text {
+    font-weight: 700;
+    text-transform: uppercase; }
   .place .user form.going-form p.notgoing-text {
     display: none; }
+  .place .user form.going-form p.going-total {
+    color: #4a4a4c;
+    margin-top: 5px; }
   .place .user form.going-form.going-confirmed p.notgoing-text {
     display: block; }
   .place .user form.going-form.going-confirmed p.going-text {
     display: none; }
   .place .user form.going-form.going-confirmed button {
-    background-color: #f00; }
+    background-color: #e7e7e7; }
+    .place .user form.going-form.going-confirmed button:hover {
+      background-color: #aaa; }
+
+.search-again {
+  margin-top: 40px;
+  background-color: #e7e7e7; }
+
+.search {
+  text-transform: uppercase; }
 
 /*# sourceMappingURL=style.css.map*/

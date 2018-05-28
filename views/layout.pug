@@ -22,15 +22,12 @@ html
                 h2 nyt
             .nav-section#user
               if user
-                a.nav-section-item(href=`/user/${user._id}`)
-                  img.avatar(src=user.gravatar + '&d=retro')
+                p.nav-section-item Welcome, #{user.name}. You are logged in
                 a.nav-section-item(href="/logout")
                   span 👋 Logout
               else
-                .nav-section-item
-                  a.user-form-access.register(href="/#") 🖊️ Register
-                .nav-section-item
-                  a.user-form-access.login(href="/#") 🔐 Log In
+                a.nav-section-item.user-form-access.register(href="/#") 🖊️ Register
+                a.nav-section-item.user-form-access.login(href="/#") 🔐 Log In
 
     block login
       .user-forms

@@ -12,8 +12,6 @@ router.get('/search-results',
   appController.renderResults
 );
 
-router.get('/user/:userid', catchErrors(appController.getUserById), catchErrors(appController.renderUser));
-
 router.post('/register',
   userController.validateRegister,
   catchErrors(userController.createUser),

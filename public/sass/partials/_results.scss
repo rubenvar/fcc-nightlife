@@ -1,4 +1,5 @@
 h1 {
+  color: #ccc;
   .place-title {
     text-transform: capitalize;
     color: $white;
@@ -11,32 +12,53 @@ h1 {
 
 .place {
   list-style: none;
-  border: 1px solid $yellow;
-  padding: 5px;
+  border: none;
+  padding: 20px 10px;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 15px;
   align-items: center;
-  margin: 0 0 25px;
-  background: $black;
+  margin: 0;
+  background: rgba(45,45,35,0.7);
+  &:nth-child(even) {
+    background-color: rgba(60,60,50,0.7);
+  }
   .text {
     h3 {
       margin-top: 0;
+      margin-bottom: 10px;
+      a {
+        color: $white;
+        font-size: 36px;
+        &:hover {
+          color: $yellow;
+        }
+      }
     }
     p {
-      margin-bottom: 0;
+      color: $grey;
+      margin-bottom: 5px;
+      font-size: 14px;
     }
     .tag {
-      background: #f00;
-      padding: 3px 7px 0;
-      border-radius: 5px;
+      background: $grey;
+      color: $black;
+      padding: 1px 5px 0;
       line-height: 1;
     }
   }
   .user {
     form.going-form {
+      p.notgoing-text, p.going-text {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
       p.notgoing-text {
         display: none;
+      }
+      p.going-total {
+        color: #4a4a4c;
+        margin-top: 5px;
       }
       &.going-confirmed {
         p.notgoing-text {
@@ -46,9 +68,17 @@ h1 {
           display: none;
         }
         button {
-          background-color: #f00;
+          background-color: $white;
+          &:hover {
+            background-color: #aaa;
+          }
         }
       }
     }
   }
+}
+
+.search-again {
+  margin-top: 40px;
+  background-color: $white;
 }

@@ -1899,6 +1899,14 @@ var loginButton = (0, _bling.$)('.login-button');
 var goingForms = (0, _bling.$$)('.going-form');
 goingForms.on('click', _going2.default);
 
+// const placeResults = $$('.place');
+// placeResults.on('mouseover', function() {
+//   this.classList.add('inter');
+// });
+// placeResults.on('mouseout', function() {
+//   this.classList.remove('inter');
+// })
+
 /***/ })
 /******/ ]);
 //# sourceMappingURL=App.bundle.js.map
