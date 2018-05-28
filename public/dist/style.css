@@ -1,18 +1,20 @@
+pre.error {
+  padding: 5rem;
+  line-height: 3;
+  white-space: pre-line; }
+
 @keyframes moveBg {
   from {
     background-position: top center; }
   to {
     background-position: bottom center; } }
 
-html {
-  font-size: 18px; }
-
 body {
   background-color: #2a2a21;
   background-image: url("/images/bg.png");
   background-repeat: repeat;
   animation: moveBg;
-  animation-duration: 120s;
+  animation-duration: 300s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: linear;
@@ -29,6 +31,9 @@ body {
   @media all and (max-width: 920px) {
     .wrapper {
       margin: 0 30px; } }
+
+.search {
+  text-transform: uppercase; }
 
 html {
   box-sizing: border-box; }
@@ -499,45 +504,52 @@ nav {
 button, input, optgroup, select, textarea {
   font-family: 'Prosto One', cursive; }
 
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #fff641;
-  background: #2a2a21;
-  color: #fff641; }
-  input:focus, input:active, textarea:focus, textarea:active {
-    border-color: #f2f2f2; }
-
-label {
+.nav {
+  display: -ms-grid;
+  display: grid;
+  list-style: none;
+  margin: 0;
   padding: 0;
-  margin-bottom: 5px;
-  display: block;
-  font-weight: 700; }
-
-button,
-.button,
-input[type="submit"] {
-  padding: 15px 25px;
-  margin: 0 0 10px 0;
-  line-height: 1.3;
-  box-shadow: none;
-  border: none;
-  background-color: #fff641;
-  color: #2a2a21;
-  cursor: pointer; }
-  button p,
-  .button p,
-  input[type="submit"] p {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  background: transparent; }
+  .nav-section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-flex-align: stretch;
+        align-items: stretch; }
+  .nav #logo {
+    justify-self: start; }
+    @media all and (max-width: 550px) {
+      .nav #logo {
+        justify-self: center; } }
+  .nav #user {
+    justify-self: end;
+    grid-gap: 25px; }
+    @media all and (max-width: 550px) {
+      .nav #user {
+        justify-self: center;
+        margin-top: 10px; } }
+  .nav a, .nav p {
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 5px 0;
+    font-size: 16px;
     margin: 0; }
-  button:hover,
-  .button:hover,
-  input[type="submit"]:hover {
-    background-color: #aaa; }
-
-a.button {
-  display: block;
-  text-align: center; }
+  .nav h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 50px;
+    line-height: 1;
+    text-transform: none; }
+  @media all and (max-width: 550px) {
+    .nav {
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr; } }
 
 @keyframes slideIn {
   0% {
@@ -645,73 +657,49 @@ a.button {
       .user-forms .user-form {
         margin-top: 50px; } }
 
-.nav {
-  display: -ms-grid;
-  display: grid;
-  list-style: none;
-  margin: 0;
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #fff641;
+  background: #2a2a21;
+  color: #fff641; }
+  input:focus, input:active, textarea:focus, textarea:active {
+    border-color: #f2f2f2; }
+
+label {
   padding: 0;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  background: transparent; }
-  .nav-section {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-    -ms-flex-align: stretch;
-        align-items: stretch; }
-  .nav #logo {
-    justify-self: start; }
-    @media all and (max-width: 550px) {
-      .nav #logo {
-        justify-self: center; } }
-  .nav #user {
-    justify-self: end;
-    grid-gap: 25px; }
-    @media all and (max-width: 550px) {
-      .nav #user {
-        justify-self: center;
-        margin-top: 10px; } }
-  .nav a, .nav p {
-    display: -ms-grid;
-    display: grid;
-    -ms-flex-align: center;
-        align-items: center;
-    padding: 5px 0;
-    font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: 400; }
+
+button,
+.button,
+input[type="submit"] {
+  padding: 15px 25px;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  box-shadow: none;
+  border: none;
+  background-color: #fff641;
+  color: #2a2a21;
+  cursor: pointer; }
+  button p,
+  .button p,
+  input[type="submit"] p {
     margin: 0; }
-  .nav h2 {
-    padding: 0;
-    margin: 0;
-    font-size: 50px;
-    line-height: 1;
-    text-transform: none; }
-  @media all and (max-width: 550px) {
-    .nav {
-      -ms-grid-columns: 1fr;
-          grid-template-columns: 1fr; } }
+  button:hover,
+  .button:hover,
+  input[type="submit"]:hover {
+    background-color: #aaa; }
 
-.hide {
-  text-indent: -999999px;
-  font-size: 0; }
+a.button {
+  display: block;
+  text-align: center; }
 
-.avatar {
-  min-width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center; }
-
-pre.error {
-  padding: 5rem;
-  line-height: 3;
-  white-space: pre-line; }
-
-h1 {
+h1.results-title {
   color: #ccc; }
-  h1 .place-title {
+  h1.results-title .place-title {
     text-transform: capitalize;
     color: #f2f2f2; }
 
@@ -722,7 +710,7 @@ h1 {
 .place {
   list-style: none;
   border: none;
-  padding: 20px 10px;
+  padding: 30px 10px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 3fr 1fr;
@@ -788,9 +776,6 @@ h1 {
 .search-again {
   margin-top: 40px;
   background-color: #f2f2f2;
-  text-transform: uppercase; }
-
-.search {
   text-transform: uppercase; }
 
 /*# sourceMappingURL=style.css.map*/

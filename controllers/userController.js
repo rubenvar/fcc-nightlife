@@ -41,7 +41,6 @@ exports.login = (req, res, next) => {
     }
     req.login(user, err => {
       if (err) return next(err);
-      // return res.json(user);
       req.flash('success', '✅ You are logged in!')
       return res.redirect('back');
     });

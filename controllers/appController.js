@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User'); //import here like this because it is already imported in start.js
 
 exports.renderHome = (req, res) => {
-  res.render('homepage');
+  res.render('homepage', { title: 'Search your favorite venues!' });
 }
 
 exports.getSearchResults = (req, res, next) => {
   // gets the searched word
   const location = req.query.location;
-  const uri = 'https://api.yelp.com/v3/businesses/search?limit=15&categories=bars&location=' + location;
+  const uri = 'https://api.yelp.com/v3/businesses/search?limit=20&categories=bars&location=' + location;
   const token = process.env.YELP_KEY;
   axios
     // connects to api

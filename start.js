@@ -11,7 +11,6 @@ mongoose.connection.on('error', (err) => {
 });
 
 // import models
-// require('./models/Poll');
 require('./models/User');
 
 // Start!

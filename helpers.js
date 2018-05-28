@@ -10,8 +10,3 @@ exports.dump = (obj) => JSON.stringify(obj, null, 2);
 
 // Some details about the site
 exports.siteName = `nyt, a Nightlife App for freeCodeCamp`;
-
-exports.menu = [
-  // { slug: '/polls', title: '📊 Polls', },
-  // { slug: '/new/poll', title: '✍️  Add new', },
-];

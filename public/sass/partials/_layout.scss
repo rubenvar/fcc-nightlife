@@ -7,16 +7,12 @@
   }
 }
 
-html {
-  font-size: 18px;
-}
-
 body {
   background-color: $black;
   background-image: url("/images/bg.png");
   background-repeat: repeat;
   animation: moveBg;
-  animation-duration: 120s;
+  animation-duration: 300s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: linear;
@@ -35,4 +31,8 @@ body {
   @media all and (max-width: 920px) {
     margin: 0 30px;
   }
+}
+
+.search {
+  text-transform: uppercase;
 }

@@ -9,6 +9,7 @@ const passport = require('passport');
 const promisify = require('es6-promisify');
 const flash = require('connect-flash');
 const expressValidator = require('express-validator');
+
 const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
@@ -56,7 +57,6 @@ app.use((req, res, next) => {
   res.locals.h = helpers; // some misc helper functions
   res.locals.flashes = req.flash(); // the flash messages
   res.locals.user = req.user || null; // the user data if they are authenticated
-  // res.locals.thePlace = req.body.location || null; // the place searched
   res.locals.currentPath = req.path; // the path
   next();
 });

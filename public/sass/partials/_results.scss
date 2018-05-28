@@ -1,10 +1,11 @@
-h1 {
+h1.results-title {
   color: #ccc;
   .place-title {
     text-transform: capitalize;
     color: $white;
   }
 }
+
 .results {
   padding: 0;
   margin: 0;
@@ -13,7 +14,7 @@ h1 {
 .place {
   list-style: none;
   border: none;
-  padding: 20px 10px;
+  padding: 30px 10px;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-gap: 15px;
